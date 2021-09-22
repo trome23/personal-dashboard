@@ -36,9 +36,18 @@ main {
     margin-left: auto;
 }
 
-#crypto {
+#crypto-top {
     display: flex;
     align-items: center;
+    font-size: 1.3rem;
+}
+
+#crypto-top > span {
+    margin-left: .8em;
+}
+
+.crypto-numbers {
+    margin: 0;
 }
 
 
