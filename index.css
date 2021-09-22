@@ -23,11 +23,23 @@ main {
     
 }
 
-.top {
+#top {
     display: flex;
     justify-content: space-between;
 }
 
-.time {
+#time {
     text-align: center;
 }
+
+#weather {
+    margin-left: auto;
+}
+
+#crypto {
+    display: flex;
+    align-items: center;
+}
+
+
+
