@@ -31,3 +31,22 @@ function dynamicTime() {
 }
 
 setInterval(dynamicTime, 1000)
+
+navigator.geolocation.getCurrentPosition(position => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=5d1eaff39106d9b455ce233d6289c4d9`)
+        .then(res => {
+            if (!res.ok) {
+                throw Error("Weather data not available")
+            }
+            return res.json()
+        })
+        .then(data => {
+            const iconURL = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+            console.log(iconURL);
+            document.querySelector("#weather").innerHTML = `<img src = ${iconURL}>`
+        })
+        .catch(err => console.error(err))
+});
+
+// http://openweathermap.org/img/wn/{weathericonID}@2x.png
+
