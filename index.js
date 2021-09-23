@@ -35,7 +35,7 @@ setInterval(dynamicTime, 1000)
 const APIkey = keys.API_key
 
 navigator.geolocation.getCurrentPosition(position => {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=` + APIkey)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial&appid=` + APIkey)
         .then(res => {
             if (!res.ok) {
                 throw Error("Weather data not available")
@@ -43,8 +43,12 @@ navigator.geolocation.getCurrentPosition(position => {
             return res.json()
         })
         .then(data => {
+            console.log(data);
             const iconURL = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
-            document.querySelector("#weather").innerHTML = `<img src = ${iconURL}>`
+            document.querySelector("#weather").innerHTML = `
+                <img src = ${iconURL}><span>${Math.round(data.main.temp)}°</span>
+                <p>${data.name}</p>
+            `
         })
         .catch(err => console.error(err))
 });
