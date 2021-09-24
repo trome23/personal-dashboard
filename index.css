@@ -30,6 +30,7 @@ main {
 
 #time {
     text-align: center;
+    font-size: 5rem;
 }
 
 #weather {
@@ -43,18 +44,19 @@ main {
 .weather-city {
     width: 100%;
     text-align: right;
-    margin: -.75em 0 0 0;
+    margin: -.5em 0 0 0;
     font-weight: 700;
+    font-size: 1.5rem;
 }
 
 .weather-temp {
     margin: 0;
     font-size: 1.7rem;
-    margin-left: -.5em;
+    margin-left: -.2em;
 }
 
 #weather > img {
-    width: 4.375em;
+    width: 5em;
 }
 
 #crypto-top {
@@ -70,6 +72,10 @@ main {
 
 .crypto-numbers {
     margin: 0 .8em;
+}
+
+#author-name {
+    font-size: 1rem;
 }
 
 
