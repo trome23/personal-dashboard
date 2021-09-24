@@ -33,7 +33,28 @@ main {
 }
 
 #weather {
-    margin-left: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-self: flex-start;
+}
+
+.weather-city {
+    width: 100%;
+    text-align: right;
+    margin: -.75em 0 0 0;
+    font-weight: 700;
+}
+
+.weather-temp {
+    margin: 0;
+    font-size: 1.7rem;
+    margin-left: -.5em;
+}
+
+#weather > img {
+    width: 4.375em;
 }
 
 #crypto-top {
@@ -50,6 +71,8 @@ main {
 .crypto-numbers {
     margin: 0 .8em;
 }
+
+
 
 
 
